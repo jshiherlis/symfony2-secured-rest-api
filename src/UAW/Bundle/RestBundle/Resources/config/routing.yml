@@ -1,0 +1,7 @@
+user_api_security_check:
+    pattern: /user/security/login_check
+    defaults: { _controller: UAWRestBundle:Security:check }
+
+rest_user:
+    type:     rest
+    resource: UAW\Bundle\RestBundle\Controller\UserController

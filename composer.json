@@ -15,7 +15,11 @@
         "symfony/monolog-bundle": "~2.4",
         "sensio/distribution-bundle": "~3.0",
         "sensio/framework-extra-bundle": "~3.0",
-        "incenteev/composer-parameter-handler": "~2.0"
+        "incenteev/composer-parameter-handler": "~2.0",
+        "friendsofsymfony/user-bundle": "~2.0@dev",
+        "friendsofsymfony/rest-bundle": "~1.4",
+        "jms/serializer-bundle": "dev-master",
+        "lexik/jwt-authentication-bundle": "@stable"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
