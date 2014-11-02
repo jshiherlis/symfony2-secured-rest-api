@@ -15,10 +15,10 @@ security:
 
     firewalls:
         main:
-            pattern: ^/v1/user$
+            pattern: ^/
             form_login:
                 provider: fos_userbundle
-                login_path: /v1/user
+                login_path: /v1/
                 check_path: /v1/user/security/login_check
                 username_parameter: username
                 password_parameter: password
@@ -36,6 +36,7 @@ security:
     access_control:
         - { path: ^/v1/user/security/login_check, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/v1/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/v1/items, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/v1/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/v1/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/v1/users, role: ROLE_USER }
+        - { path: ^/v1/users/me, role: ROLE_USER }

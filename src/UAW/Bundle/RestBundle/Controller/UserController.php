@@ -3,18 +3,17 @@
 namespace UAW\Bundle\RestBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 class UserController extends Controller
 {
     public function getUserAction($slug)
     {
-        $em = $this->container->get('doctrine')->getManager();
-
         if ($slug == 'me') {
             $user = $this->getUser();
         } else{
-            $user = $em->getRepository('UAWRestBundle:User')->find($slug);
+            $user = null;
         }
 
         if (!is_object($user)){
@@ -26,21 +25,28 @@ class UserController extends Controller
 
     public function postUserAction(Request $request)
     {
-        $user = $this->getUser();
-        $form = $this->container->get('form.factory')->create(
-            $this->container->get('seekube_student.form.profile_informations.type'),
-            $user
-        );
+        $username = $request->request->get('username');
+        $password = $request->request->get('password');
 
-        if ($request->getMethod() == 'POST') {
-            $form->bind($request->request->all());
-            // data is an array with "name", "email", and "message" keys
-            $user = $form->getData();
+        if ($username != null && $password != null) {
+            $userManager = $this->get('fos_user.user_manager');
+            $user = $userManager->createUser();
+            $user->setEnabled(true)
+                ->setPlainPassword($password)
+                ->setUsername($username)
+                ->setEmail($username);
+
+            $em = $this->container->get('doctrine')->getManager();
+
+            $em->persist($user);
+            $em->flush();
+
+            return $user;
         }
 
-        $this->container->get('doctrine')->getManager()->flush();
-
-        return $user;
-    }
+        return new JsonResponse([
+            'message' => 'POST data incomplete'
+        ], 500);
+    }// "post_user"      [POST] /user
 
 }

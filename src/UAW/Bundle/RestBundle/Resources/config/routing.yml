@@ -1,3 +1,7 @@
+uaw_rest:
+    resource: "@UAWRestBundle/Resources/config/routing/default.yml"
+    prefix:   /
+
 user_api_security_check:
     pattern: /user/security/login_check
     defaults: { _controller: UAWRestBundle:Security:check }
@@ -5,3 +9,7 @@ user_api_security_check:
 rest_user:
     type:     rest
     resource: UAW\Bundle\RestBundle\Controller\UserController
+
+rest_items:
+    type:     rest
+    resource: UAW\Bundle\RestBundle\Controller\ItemController
