@@ -1,0 +1,3 @@
+rest_default_index:
+    pattern: /
+    defaults: { _controller: UAWRestBundle:Default:index }

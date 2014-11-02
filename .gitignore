@@ -1,0 +1,12 @@
+# Symfony
+app/bootstrap.php.cache
+app/cache/*
+app/var/*
+app/config/parameters.*
+app/logs/*
+app/spool/*
+composer.lock
+vendor/
+!web/theme-forum/js/vendor
+web/bundles/
+!.gitkeep

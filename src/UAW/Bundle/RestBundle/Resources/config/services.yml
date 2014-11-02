@@ -1,0 +1,4 @@
+services:
+#    uaw_rest.example:
+#        class: UAW\Bundle\RestBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

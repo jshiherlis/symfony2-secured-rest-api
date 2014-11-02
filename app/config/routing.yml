@@ -1,0 +1,3 @@
+uaw_rest:
+    resource: "@UAWRestBundle/Resources/config/routing.yml"
+    prefix:   /v1
