@@ -13,11 +13,15 @@ Create your REST API in 5 minutes
 ---------------------------------
 
 1. Clone or fork this repository
+        ``` bash
         $ git clone https://github.com/unautreweb/symfony2-secured-rest-api.git
+        ```
  
 2. Install vendors with [Composer](http://getcomposer.org/):
+        ``` bash
         $ composer update
-    
+        ```
+
 3. Generate the SSH keys :
    
    ``` bash
@@ -35,10 +39,16 @@ Create your REST API in 5 minutes
        token_ttl:        86400                                   # token ttl - defaults to 86400
    ```
 
-Demonstation
+Demonstration
 ------------
 
 Here is an example of the API [rest.unautreweb.net](http://rest.unautreweb.net/v1):
+
+* List of items [http://rest.unautreweb.net/v1/items](http://rest.unautreweb.net/v1/items)
+* Show an item [http://rest.unautreweb.net/v1/items/1](http://rest.unautreweb.net/v1/items/1)
+* Authentication 
+[http://rest.unautreweb.net/v1/user/security/login\_check](http://rest.unautreweb.net/v1/user/security/login\_check) (demo / 123456)
+
 
 Testing
 -------
