@@ -28,7 +28,7 @@ class UserController extends Controller
         $username = $request->request->get('username');
         $password = $request->request->get('password');
 
-        if ($username != null && $password != null) {
+        if (empty($username) !== false && empty($password) !== false) {
             $userManager = $this->get('fos_user.user_manager');
             $user = $userManager->createUser();
             $user->setEnabled(true)
