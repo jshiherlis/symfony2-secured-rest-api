@@ -48,5 +48,4 @@ class UserController extends Controller
             'message' => 'POST data incomplete'
         ], 500);
     }// "post_user"      [POST] /user
-
 }
