@@ -18,7 +18,7 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "friendsofsymfony/user-bundle": "~2.0@dev",
         "friendsofsymfony/rest-bundle": "~1.4",
-        "jms/serializer-bundle": "dev-master",
+        "jms/serializer-bundle": "0.13.*@dev",
         "lexik/jwt-authentication-bundle": "@stable"
     },
     "require-dev": {
