@@ -3,6 +3,7 @@ Symfony2 Secured REST API
 
 ### Symfony2 Rest Api secured with Json Web Token
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/31052f57-b901-4cdd-bc72-1953c0e1a29c/small.png)](https://insight.sensiolabs.com/projects/31052f57-b901-4cdd-bc72-1953c0e1a29c)
 
 This project is a secured Restful API template for Symfony2 
 using [`lexik/LexikJWTAuthenticationBundle`](https://github.com/lexik/LexikJWTAuthenticationBundle)
