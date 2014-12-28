@@ -9,3 +9,6 @@ vendor/
 !web/theme-forum/js/vendor
 web/bundles/
 !.gitkeep
+/bin/
+/build/
+/composer.phar

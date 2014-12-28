@@ -10,8 +10,10 @@ class DefaultControllerTest extends WebTestCase
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/hello/Fabien');
+        $client->request('GET', '/v1/');
+        $response = $client->getResponse();
 
-        $this->assertTrue($crawler->filter('html:contains("Hello Fabien")')->count() > 0);
+        $this->assertSame(200, $response->getStatusCode());
+        $this->assertTrue(strpos($response->getContent(), '"Project Name":"Symfony2 RestApi"') !== false);
     }
 }
