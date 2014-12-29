@@ -1,4 +1,3 @@
-# Symfony
 app/bootstrap.php.cache
 app/cache/*
 app/config/parameters.*
