@@ -1,10 +1,14 @@
 uaw_rest:
     resource: "@UAWRestBundle/Resources/config/routing/default.yml"
     prefix:   /
+    requirements:
+        _method: GET 
 
 user_api_security_check:
     pattern: /user/security/login_check
     defaults: { _controller: UAWRestBundle:Security:check }
+    requirements:
+        _method: POST
 
 rest_user:
     type:     rest
